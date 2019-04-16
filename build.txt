@@ -1,0 +1,18 @@
+Man måste ha JAVA 11 för att kunna bygga progatec-ttn.
+Innan man bygger måsta man ändra på user, passw och nyckel till API.
+Tyvärr ingen konfig-fil just nu!
+
+
+%> git clone gitlab@gitlab.smhi.se:redspider/ttn.git
+%> cd ttn
+välj branch om inte master ska användas: %> git checkout <branch> 
+%> JAVA_HOME=/Users/edhag/program/jdk-11.0.2.jdk/Contents/Home/bin/
+%> /Users/edhag/program/apache-ant-1.10.5/bin/ant -f build.xml
+
+Run
+======================
+Start the application - go to the build dir
+%> sh start.sh
+
+Shutdown application - go to the build dir
+%> sh shutdown.sh 

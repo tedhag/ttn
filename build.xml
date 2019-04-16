@@ -1,0 +1,39 @@
+<project name="progatec-ttn" default="make-jar">
+
+	<property name="build.path" value="${basedir}/build"/>
+
+	<target name="clean">                
+		<delete dir="${build.path}/classes" />
+	</target>
+
+	<target name="javac" depends="clean">
+		<mkdir dir="${build.path}/classes"/>
+		<javac destdir="${build.path}/classes" 
+			deprecation="false" 
+			includeantruntime="false" 
+			srcdir="." 
+			encoding="ISO-8859-1" 
+			debug="true">
+			<compilerarg line="-Xlint:unchecked"/>
+			<classpath>
+				<fileset dir="${basedir}/lib">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="make-jar" depends="javac">
+		<jar destfile="${build.path}/progatec-ttn.jar">
+			<fileset dir="${build.path}/classes"/>
+			<zipgroupfileset dir="${basedir}/lib" includes="**/*.jar">
+				<include name="**/*.class" />
+				<include name="**/*.properties" />
+			</zipgroupfileset>
+		    <manifest>
+		        <attribute name="Main-Class" value="se.progatec.Main"/>
+		    </manifest>
+		</jar>
+	</target>
+
+</project>

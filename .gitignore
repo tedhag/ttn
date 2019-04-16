@@ -1,0 +1,9 @@
+/bin/**
+
+# Log file
+/log/**
+*.log
+*.lck
+
+.metadata
+.settings/
