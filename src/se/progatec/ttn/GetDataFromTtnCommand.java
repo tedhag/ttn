@@ -12,7 +12,7 @@ public class GetDataFromTtnCommand {
 		.get("https://kfa_data.data.thethingsnetwork.org/api/v2/query?last=1h")
 		.trustAllHosts()
 		.acceptJson()
-		.header("Authorization", "key ttn-account-v2.-121Ez8xJzBWoUKWJCbT0RrXByVeW0gtdVgA060iqjU")
+		.header("Authorization", "key <key>")
 		.body();
 		
 //		System.out.println(new JSONArray(data).toString());

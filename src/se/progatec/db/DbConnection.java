@@ -30,9 +30,9 @@ public class DbConnection {
 	private void init() {
 		try {
 			HikariConfig config = new HikariConfig();
-			config.setJdbcUrl("jdbc:mysql://progatec.myftp.org:3306/ttn?serverTimezone=Europe/Stockholm");
-			config.setUsername("ttn");
-			config.setPassword("herrebro");
+			config.setJdbcUrl("jdbc:mysql://<host>:<port>/ttn?serverTimezone=Europe/Stockholm");
+			config.setUsername("<user>");
+			config.setPassword("<passw>");
 			config.setMaximumPoolSize(10);
 			config.setMinimumIdle(4);
 			config.setIdleTimeout(120000);
